@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ABM Usuarios</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap/css/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+    <link href="./stylesheets/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ABM Usuarios - Administrador</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="dashboard.html">Ver listado</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar usuario">
+            <span class="input-group-btn">
+              <button class="btn btn-default maincolor1 maincolor1hover" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Ver listado <span class="sr-only">(current)</span></a></li>
+            <li><a href="dashboard-add.html">Añadir usuario</a></li>
+            <li><a href="dashboard-mod.html">Modificar usuario</a></li>
+            <li><a data-toggle="modal" data-target="#confirmDeleteModal" href="">Eliminar usuario</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Listado de usuarios</h1>
+          <div class="table-responsive">
+            <table class="table table-striped center">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" id="action-toggle"></th>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Email</th>
+                  <th>Teléfono</th>
+                  <th>Fecha de nacimiento</th>
+                  <th>Ver foto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>1</td>
+                  <td>Jaime</td>
+                  <td>Ibañez</td>
+                  <td>jaime.ibanez@gmail.com</td>
+                  <td>011-152155155</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>2</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>3</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>4</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>5</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>6</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>7</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>8</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td>mauris</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>9</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>10</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+                <tr>
+                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
+                  <td>11</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                  <td>15/12/2015</td>
+                  <td>Link</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button type="button" class="btn btn-danger btn-right" data-toggle="modal" data-target="#ConfirmDeleteModal">Eliminar usuarios seleccionados</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Eliminar usuario</h4>
+          </div>
+          <div class="modal-body">
+            ¿Estás seguro que deseas eliminar el usuario?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-danger ">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./stylesheets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

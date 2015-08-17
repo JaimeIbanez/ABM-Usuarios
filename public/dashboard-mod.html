@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ABM Usuarios</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap/css/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+    <link href="./stylesheets/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ABM Usuarios - Administrador</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="dashboard.html">Ver listado</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar usuario">
+            <span class="input-group-btn">
+              <button class="btn btn-default maincolor1 maincolor1hover" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="dashboard.html">Ver listado</a></li>
+            <li><a href="dashboard-add.html">Añadir usuario</a></li>
+            <li class="active"><a href="dashboard-add.html">Modificar usuario <span class="sr-only">(current)</span></a></li>
+            <li><a href="dashboard.html">Eliminar usuario</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Modificar usuario</h1>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputNombre" class="col-sm-2 control-label">Nombre</label>
+              <div class="col-sm-10">
+                <input type="nombre" class="form-control" id="inputNombre" placeholder="Nombre del usuario">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputApellido" class="col-sm-2 control-label">Apellido</label>
+              <div class="col-sm-10">
+                <input type="apellido" class="form-control" id="inputApellido" placeholder="Apellido del usuario">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail disabled-input" placeholder="Email del usuario" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputContraseña" class="col-sm-2 control-label">Contraseña</label>
+              <div class="col-sm-10">
+                <input type="contraseña" class="form-control" id="inputContraseña" placeholder="Contraseña del usuario">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputFoto" class="col-sm-2 control-label">Foto</label>
+              <div class="col-sm-10">
+                <input type="apellido" class="form-control" id="inputFoto" placeholder="Foto del usuario">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputTelefono" class="col-sm-2 control-label">Teléfono</label>
+              <div class="col-sm-10">
+                <input type="telefono" class="form-control" id="inputTelefono" placeholder="Teléfono del usuario">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputFechaNac" class="col-sm-2 control-label">Fecha de nacimiento</label>
+              <div class="col-sm-10">
+                <input type="fechanac" class="form-control" id="inputFechaNac" placeholder="Fecha de nacimiento del usuario">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-warning">Modificar</button>
+                <button type="submit" class="btn btn-defaylt">Cancelar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./stylesheets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
