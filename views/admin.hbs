@@ -33,8 +33,7 @@
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Ver listado <span class="sr-only">(current)</span></a></li>
             <li><a href="adminAdd">Añadir usuario</a></li>
-            <li><a href="dashboard-mod.html">Modificar usuario</a></li>
-            <li><a data-toggle="modal" data-target="#ConfirmDeleteModal" href="">Eliminar usuario</a></li>
+            <li><a href="adminMod">Modificar usuario</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -43,7 +42,6 @@
             <table class="table table-striped center">
               <thead>
                 <tr>
-                  <th><input type="checkbox" id="action-toggle"></th>
                   <th>#</th>
                   <th>Nombre</th>
                   <th>Apellido</th>
@@ -51,12 +49,12 @@
                   <th>Teléfono</th>
                   <th>Edad</th>
                   <th>Foto</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 {{#each data}}
                 <tr>
-                  <td><input class="action-select" name="_selected_action" value="1" type="checkbox"></td>
                   <td>{{id}}</td>
                   <td>{{name}}</td>
                   <td>{{lastName}}</td>
@@ -64,12 +62,21 @@
                   <td>{{phone}}</td>
                   <td>{{age}}</td>
                   <td><a href={{photo}}>Ver foto</td>
+                  <td>
+                    <div class="btn-group" role="group">
+                      <a href=/adminMod/{{id}} type="submit" id={{id}} class="btn btn-warning" title="Modificar Usuario">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                      </a>
+                      <button type="button" id="{{id}}" class="btn btn-danger" data-toggle="modal" data-target="#ConfirmDeleteModal" title="Eliminar Usuario">
+                        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                  </td>
                 </tr>
                 {{/each}}
               </tbody>
             </table>
           </div>
-          <button type="button" class="btn btn-danger btn-right" data-toggle="modal" data-target="#ConfirmDeleteModal">Eliminar usuarios seleccionados</button>
         </div>
       </div>
     </div>
@@ -92,14 +99,3 @@
         </div>
       </div>
     </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
