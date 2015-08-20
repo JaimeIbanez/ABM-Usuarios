@@ -9,6 +9,8 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login'); // Log in / ABM Usuarios
 var admin = require('./routes/admin'); // Admin - Dashboard  / ABM Usuarios
+var adminAddForm = require('./routes/adminAddForm');
+var adminAdd = require('./routes/adminAdd');
 
 var app = express();
 
@@ -28,6 +30,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/login', login); // Log in / ABM Usuarios
 app.use('/admin', admin); // Admin - Dashboard  / ABM Usuarios
+app.use('/adminAdd', adminAdd);
+app.use('/adminAddForm', adminAddForm);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
