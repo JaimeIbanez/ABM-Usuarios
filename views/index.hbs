@@ -1,2 +1,208 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">ABM Usuarios</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="#features">Características</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacto <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#contact1">Ricardo</a></li>
+                        <li><a href="#contact2">Jaime</a></li> 
+                    </ul>
+                </li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#modalLogIn">Ingresar</button></li>
+                <li><button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#modalSignUp">Registrarme</button></li>
+            </ul>                   
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container theme-showcase" role="main">
+
+    <!-- Main jumbotron -->
+    <div class="jumbotron">
+        <h1>ABM Usuarios</h1>
+        <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+    </div>
+
+    <!-- Row of columns -->
+    <div class="row">            
+        <div class="col-md-12" id="features">
+            <h1>Características</h1>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" id="contact">
+            <h1>Contacto</h1>
+        </div>
+        <div class="col-md-4">
+            <address id="contact1">
+                <strong>Tu Queja Suma</strong><br>
+                Avenida Siempreviva 742<br>
+                Córdoba, Argentina<br>
+                <abbr title="Teléfono">Tel:</abbr> (54) 9 11 2398-7605
+            </address>
+            <address>
+                <strong>Ricardo Vaca Narvaja</strong><br>
+                <a href="mailto:#">ricardo@tuquejasuma.com</a>
+            </address>
+        </div>
+        <div class="col-md-4">
+            <address id="contact2">
+                <strong>BuHunt</strong><br>
+                Soler 3700<br>
+                Buenos Aires, Argentina<br>
+                <abbr title="Teléfono">Tel:</abbr> (54) 9 11 3816-5357
+            </address>
+            <address>
+                <strong>Jaime Ibáñez</strong><br>
+                <a href="mailto:#">jaime@buhunt.com</a>
+            </address>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-right">&copy; ABM Usuarios 2015. Todos los derechos reservados</p>
+    </div>
+</footer>
+
+<!-- Modal Log in-->
+<div class="modal fade" id="modalLogIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Ingresar</h4>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="/login" name="formLogIn">
+                    <div class="form-group">
+                        <label for="loginEmail" class="sr-only">Correo Electrónico</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="Correo Electrónico" name="loginEmail" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword" class="sr-only">Contraseña</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Contraseña" name="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="buttonLogIn">Ingresar</button>
+                </form>
+                <div class="alert alert-warning fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Advertencia:</strong> El usuario con el correo especificado no existe. Por favor registrarse o ingresar con otro correo.
+                </div>
+                <div class="alert alert-danger fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Error:</strong> Contraseña incorrecta. Intente nuevamente.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <!-- <button type="submit" class="btn btn-primary" id="buttonLogIn">Ingresar</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Sign up-->
+<div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myLargeModalLabel">Registrarme</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="signupEmail" class="col-sm-3 control-label">Correo Electrónico</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="signupEmail" placeholder="Correo Electrónico">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword" class="col-sm-3 control-label">Contraseña</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control" id="signupPassword" placeholder="Contraseña">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupName" class="col-sm-3 control-label">Nombre</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="signupName" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupLastName" class="col-sm-3 control-label">Apellido</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="signupLastName" placeholder="Apellido">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPhone" class="col-sm-3 control-label">Teléfono</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" id="signupPhone" placeholder="Teléfono">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupBirthday" class="col-sm-3 control-label">Fecha Nacimiento</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" id="signupBirthday" placeholder="Fecha Nacimiento">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPhoto" class="col-sm-3 control-label">Foto</label>
+                        <div class="col-sm-8">
+                            <input type="url" class="form-control" id="signupPhoto" placeholder="Foto" data-toggle="tooltip" data-placement="bottom" title="URL de la foto">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="buttonSignUp">Registrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="./stylesheets/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+</script>
