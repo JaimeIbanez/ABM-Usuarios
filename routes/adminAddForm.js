@@ -19,7 +19,12 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
 
 		console.log(nameInput, lastNameInput, emailInput, passwordInput, photoInput, phoneInput, birthdayInput);
 
-		//validar si está usando db find que ya está en login
+		// calcular edad
+		var bday = new Date(birthdayInput);
+		var cur = new Date();
+		var diff = cur-bday;
+		var ageInput = Math.floor(diff/31536000000);
+
 
 		db.collection('users').find({email: emailInput}).toArray(function(err, arr) {
 			if (err || arr === undefined || arr.length === 0) {
@@ -33,7 +38,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
 						password: passwordInput,
 						phone: phoneInput,
 						birthday: birthdayInput,
-						age: 99, // falta calcular de la fecha de nac que edad tiene
+						age: ageInput,
 						photo: photoInput,
 						role: 'user'
 					});
