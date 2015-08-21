@@ -1,0 +1,22 @@
+{{#each data}}
+<div name="{{id}}" id="ConfirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Confirmar eliminación de usuario</h4>
+          </div>
+          <div class="modal-body">
+            ¿Estás seguro que deseas eliminar el usuario?
+          </div>
+          <div class="modal-footer">
+            <form method="POST" action="/adminRem" class="form-horizontal">
+            <input type="hidden" value="{{id}}" name="inputId">
+            <button method="POST" action="/adminRem" type="submit" class="btn btn-danger ">Confirmar</button>
+            <a href="/admin" class="btn btn-default">Cancelar</a>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
+{{/each}}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  	<head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    	<title>ABM Usuarios</title>
+
+    	<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap/css/bootstrap-theme.min.css">
+        
+        <!-- Estilos custom para este proyecto -->
+        <link rel="stylesheet" type="text/css" href="./stylesheets/abm.css">
+	</head>
+
+  	<body>
+        <div name="{{id}}" id="ConfirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Confirmar eliminación de usuario</h4>
+              </div>
+              <div class="modal-body">
+                ¿Estás seguro que deseas eliminar el usuario?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger ">Confirmar</button>
+              </div>
+            </div>
+          </div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Bootstrap -->
+    	<script src="./stylesheets/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();   
+            });
+        </script>
+	</body>
+</html>

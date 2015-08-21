@@ -37,7 +37,7 @@ app.use('/admin', admin); // Admin - Dashboard  / ABM Usuarios
 app.use('/adminAdd', adminAdd);
 app.use('/adminAddForm', adminAddForm);
 app.use('/adminMod', adminMod);
-app.use('/adminRemove', adminRemove);
+app.use('/adminRem', adminRemove);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
