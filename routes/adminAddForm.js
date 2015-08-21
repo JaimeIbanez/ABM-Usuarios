@@ -13,7 +13,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
 		var lastNameInput = req.body.inputApellido;
 		var emailInput = req.body.inputEmail;
 		var passwordInput = req.body.inputPassword;
-		var photoInput = req.body.inputFoto;
+		var photoInput = req.body.inputFoto.toString();
 		var phoneInput = req.body.inputTelefono;
 		var birthdayInput = req.body.inputBirthday;
 
@@ -48,7 +48,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
 			else {
 				// falta manejar mejor el error para que este dentro de la misma página
 				res.render('error', {
-					message: 'Ya existe un usuario registrado con ese email ' + emailInput + ' . Por favor registrarse con otro email',
+					message: 'Ya existe un usuario registrado con ese email ' + emailInput + ' . Por favor registrarse con otro email.',
 		 			error: {status: 404, stack: new Error().stack}
 		 		});
 			}

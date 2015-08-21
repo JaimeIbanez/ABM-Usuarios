@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login'); // Log in / ABM Usuarios
+var signup = require('./routes/signup'); // Sign up / ABM Usuarios
 var admin = require('./routes/admin'); // Admin - Dashboard  / ABM Usuarios
 var adminAddForm = require('./routes/adminAddForm');
 var adminAdd = require('./routes/adminAdd');
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/login', login); // Log in / ABM Usuarios
+app.use('/signup', signup); // Sign up / ABM Usuarios
 app.use('/admin', admin); // Admin - Dashboard  / ABM Usuarios
 app.use('/adminAdd', adminAdd);
 app.use('/adminAddForm', adminAddForm);
