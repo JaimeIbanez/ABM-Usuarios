@@ -3,37 +3,17 @@ var router = express.Router();
 
 var Mongo = require('mongodb').MongoClient;
 
-// router.post('/', function(req, res, next) {
-// 	var email2 = req.body.loginEmail;
-// 	var password2 = req.body.loginPassword;
-	
-// 	console.log(email2, password2);
-
-// 	// res.redirect('/users');
-// 	res.render('users', { email: email2, password: password2 });
-// });
-
-// router.get('/', function(req, res, next) {
-// 	res.render('users', { email: email2, password: password2 });
-// });
-
-
-
-
-
-
-
-Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
+Mongo.connect('mongodb://localhost:27017/abm', function (err, db) {
 
 	if (err) {
 		throw new Error('Error: No hay conexión con la base de datos');
 	}
 
-	router.post('/', function(req, res, next) {
+	router.post('/', function (req, res, next) {
 		var emailInput = req.body.loginEmail;
 		var passwordInput = req.body.loginPassword;
 
-		db.collection('users').find({email: emailInput}).toArray(function(err, arr) {
+		db.collection('users').find({email: emailInput}).toArray(function (err, arr) {
 			if (err || arr === undefined || arr.length === 0) {
 				res.render('error', {
 					message: 'No existe un usuario registrado con el email ' + emailInput + ' . Por favor registrarse o intentar ingresar con otro email',
@@ -52,13 +32,11 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
 					if (array.role === 'admin') {
 						res.redirect('/admin');
 					} else {
-						res.redirect('/users');
+						res.redirect('/users/'+ array.id);
 					}
 				}
 			}
 		});
-
-
 
 	});
 
