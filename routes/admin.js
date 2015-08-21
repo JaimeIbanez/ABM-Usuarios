@@ -12,7 +12,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 	router.get('/', function(req, res, next){
 
 		// res.render('dashboard');
-		db.collection('users').find().toArray(function(err,arr){
+		db.collection('users').find().sort({id: 1}).toArray(function(err,arr){
 				// falta hacer la parte de errores, si err existe, render error. Si arr es undefined, render error, si arr tiene longitud 0, render error
 				if (err || arr === undefined || arr.length === 0){
 					res.render('error',{
