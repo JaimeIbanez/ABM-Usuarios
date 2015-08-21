@@ -10,10 +10,9 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 		throw new Error('no está corriendo el servidor mongo (mongod) o'
 			+ ' no estás llegando a ese puerto o host');
 	}
-	/* GET user-Mod. */
-
+	/* GET adminMod. */
 	router.get('/:id', function (req, res, next) {
-	// voy a traer de la db la consulta buscando por id y la voy a inyectar en el hbs de mod
+	// traigo de la db la consulta buscando por id y la inyecto en el hbs
 		idUser = req.params.id;
 		console.log(idUser);
 		db.collection('users').find({id: Number(req.params.id)}).toArray(function(err,arr){
@@ -24,10 +23,9 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 		});
 	});
 
-//POST method route
+	//POST method route
 	router.post('/', function (req, res) {
-		console.log('here');
-		console.log(req.body);
+		//console.log(req.body);
 		var idInput = req.body.inputId;
 		var nameInput = req.body.inputNombre;
 		var lastNameInput = req.body.inputApellido;
@@ -37,7 +35,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 		var phoneInput = req.body.inputTelefono;
 		var birthdayInput = req.body.inputFechaNac;
 
-		console.log(idInput, nameInput, lastNameInput, emailInput, passwordInput, photoInput, phoneInput, birthdayInput);
+		//console.log(idInput, nameInput, lastNameInput, emailInput, passwordInput, photoInput, phoneInput, birthdayInput);
 
 		// calcular edad
 		var bday = new Date(birthdayInput);
@@ -45,6 +43,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 		var diff = cur-bday;
 		var ageInput = Math.floor(diff/31536000000);
 
+		//actualizo sólo los campos que me interesan
 		db.collection('users').update({id: Number(idInput)}, {
 			$set: {
 				name: nameInput,

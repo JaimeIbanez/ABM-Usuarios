@@ -56,13 +56,6 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
 
 
 	});
-		// 	if (err || arr === undefined || arr.length === 0) {
-		// 		res.render('error', {
-		// 			message: 'No existe un usuario registrado con el email ' + emailInput + ' . Por favor registrarse o intentar ingresar con otro email',
-		//  			error: {status: 404, stack: new Error().stack}
-		//  		});
-		// 	}
-		// 	else {
 });
 
 
