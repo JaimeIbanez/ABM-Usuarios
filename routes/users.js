@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-var Mongo = require('mongodb').MongoClient;
+var dbConnection = require('../lib/dbConnection');
 
-Mongo.connect('mongodb://localhost:27017/abm', function (err, db) {
+dbConnection.connectToServer (function (err, db) {
 
 	if (err) {
 		throw new Error('Error: No hay conexión con la base de datos');
