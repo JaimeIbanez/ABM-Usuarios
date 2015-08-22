@@ -11,9 +11,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <a href="/" type="button" class="btn btn-default navbar-btn navbar-right" id="buttonSignOut">Cerrar Sesión</a>
-          <form class="navbar-form navbar-right">
+          <form method="GET" action="/admin" class="navbar-form navbar-right">
             <div class="input-group">
-            <input type="text" class="form-control" placeholder="Buscar usuario">
+            <input name="s" type="text" class="form-control" placeholder="Buscar usuario">
             <span class="input-group-btn">
               <button class="btn btn-default maincolor1 maincolor1hover" type="submit">
                 <i class="glyphicon glyphicon-search"></i>
@@ -29,7 +29,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Ver listado <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/admin">Ver listado <span class="sr-only">(current)</span></a></li>
             <li><a href="adminAdd">Añadir usuario</a></li>
           </ul>
         </div>

@@ -10,7 +10,13 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 	}
 	//las rutas
 	router.get('/', function(req, res, next){
-		db.collection('users').find().sort({id: 1}).toArray(function(err,arr){
+		console.log(req.query.s);
+		//console.log(req);
+		var search={};
+		if(typeof req.query.s !="undefined" && req.query.s.length>0){
+			search={email: new RegExp(req.query.s)};
+		}
+		db.collection('users').find(search).sort({id: 1}).toArray(function(err,arr){
 			if (err || arr === undefined || arr.length === 0){
 				res.render('error',{
 					message: 'El usuario "' + req.params.username + '" no existe! Ponete las pilas!',
