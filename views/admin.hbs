@@ -13,7 +13,7 @@
           <a href="/" type="button" class="btn btn-default navbar-btn navbar-right" id="buttonSignOut">Cerrar Sesión</a>
           <form method="GET" action="/admin" class="navbar-form navbar-right">
             <div class="input-group">
-            <input name="s" type="text" class="form-control" placeholder="Buscar usuario">
+            <input name="s" type="text" class="form-control" placeholder="Buscar usuario" data-toggle="tooltip" data-placement="bottom" title="Correo Electrónico">
             <span class="input-group-btn">
               <button class="btn btn-default maincolor1 maincolor1hover" type="submit">
                 <i class="glyphicon glyphicon-search"></i>
@@ -30,7 +30,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="/admin">Ver listado <span class="sr-only">(current)</span></a></li>
-            <li><a href="adminAdd">Añadir usuario</a></li>
+            <li><a href="/adminAdd">Agregar usuario</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -46,7 +46,7 @@
                   <th>Teléfono</th>
                   <th>Edad</th>
                   <th>Foto</th>
-                  <th>Acciones</th>
+                  <th data-toggle="tooltip" data-placement="left" title="Modificar / Eliminar">Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -61,37 +61,36 @@
                   <td><a href={{photo}}>Ver foto</td>
                   <td>
                     <div class="btn-group" role="group">
-                      <a href=/adminMod/{{id}} type="submit" id={{id}} class="btn btn-warning" title="Modificar Usuario">
+                      <a href="/adminMod/{{id}}" type="submit" class="btn btn-warning" title="Modificar Usuario">
                         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                       </a>
-                      <a href=/adminRem/{{id}} type="submit" id={{id}} class="btn btn-danger" title="Eliminar Usuario">
+                      <button type="button" class="btn btn-danger title="Eliminar Usuario" data-toggle="modal" data-target="#modalConfirmDelete{{id}}">
                         <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-                      </a>
+                      </button>
                     </div>
                   </td>
                 </tr>
+                <!-- Modal -->
+                <div class="modal fade" id="modalConfirmDelete{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel{{id}}">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel{{id}}">Eliminar usuario</h4>
+                            </div>
+                            <div class="modal-body">
+                                ¿Estás seguro que deseas eliminar al usuario {{email}}?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                <a href="/adminRem/{{id}}" type="button" class="btn btn-danger">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {{/each}}
               </tbody>
             </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div name="{{id}}" class="modal fade" id="ConfirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Confirmar eliminación de usuario</h4>
-          </div>
-          <div class="modal-body">
-            ¿Estás seguro que deseas eliminar el usuario?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger ">Confirmar</button>
           </div>
         </div>
       </div>

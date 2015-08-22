@@ -35,7 +35,7 @@
     <!-- Main jumbotron -->
     <div class="jumbotron">
         <h1>ABM Usuarios</h1>
-        <p>Bienvenidos a nuestro ABM hecho con Node.js, Express, MongoDB y Bootstrap.</p>
+        <p>Aplicación Web que permite gestionar (Alta, Baja y Modificación) bases de datos de usuarios. Hecha con Node.js, Express, MongoDB y Bootstrap.</p>
     </div>
 
     <!-- Row of columns -->
@@ -44,12 +44,20 @@
             <h1>Características</h1>
         </div>
         <div class="col-md-4">
-            <h2>Usuarios</h2>
-            <p>Pueden registrarse, loguearse al sitio y modificar los datos de su perfil. Si no desean seguír usando el sitio, pueden eliminar su cuenta.</p>
+            <h2>Roles de perfiles</h2>
+            <p>Hay distintos tipos de roles, los cuales pueden acceder a distintas funcionalidades:</p>
+            <ul>
+                <li>Los "usuarios" pueden registrarse y crear un perfil con su información personal. Pueden modificar su perfil e incluso eliminarlo.</li>
+                <li>Los "administradores" tienen acceso al listado completo de usuarios. Pueden buscar usuarios específicos, agregar nuevos usuarios, modificar la información de cualquier usuario y eliminar cualquier usuario.</li>
+            </ul>
         </div>
         <div class="col-md-4">
-            <h2>Administradores</h2>
-            <p>Los usuarios con rol Admin pueden visualizar los usuarios en un panel de control. Desde dicho panel pueden dar de alta, modificar y eliminar usuarios. Además incorporamos una función de busqueda para visulizar sólo los datos que sean de interés.</p>
+            <h2>Responsive</h2>
+            <p>La aplicación está diseñada no sólo para verse bien en navegadores web, sino también en cualquier dispositivo móvil.</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Lorem Ipsum</h2>
+            <p>Porque cualquier aplicación web respetable tiene que tener un párrafo Lorem Ipsum para darle profesionalismo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis dolor accumsan lectus mollis imperdiet. Nullam eget leo sit amet sapien efficitur tristique nec sed nisi. Sed aliquet faucibus nunc, et accumsan ipsum pharetra nec. Duis ut gravida orci. Nunc malesuada viverra orci viverra facilisis".</p>
         </div>
     </div>
 
@@ -109,20 +117,19 @@
                         <label for="loginPassword" class="sr-only">Contraseña</label>
                         <input type="password" id="loginPassword" class="form-control" placeholder="Contraseña" name="loginPassword" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="buttonLogIn">Ingresar</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="buttonLogIn">Ingresar</button>
+                    </div>
                 </form>
-                <div class="alert alert-warning fade in">
+                <div class="alert alert-warning fade in" hidden="true">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Advertencia:</strong> El usuario con el correo especificado no existe. Por favor registrarse o ingresar con otro correo.
                 </div>
-                <div class="alert alert-danger fade in">
+                <div class="alert alert-danger fade in" hidden="true">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Error:</strong> Contraseña incorrecta. Intente nuevamente.
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <!-- <button type="submit" class="btn btn-primary" id="buttonLogIn">Ingresar</button> -->
             </div>
         </div>
     </div>
@@ -180,16 +187,15 @@
                             <input type="url" class="form-control" id="signupPhoto" placeholder="Foto" name="signupPhoto" required data-toggle="tooltip" data-placement="bottom" title="URL de la foto">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success" id="buttonSignUp">Registrar</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="buttonSignUp">Registrar</button>
+                    </div>
                 </form>
-                <div class="alert alert-warning fade in">
+                <div class="alert alert-danger fade in" hidden="true">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>Advertencia:</strong> Ya existe un usuario registrado con el correo especificado. Por favor ingresar con este correo o ingresar con otro correo.
+                    <strong>Advertencia:</strong> Ya existe un usuario registrado con el correo especificado. Por favor ingresar con este correo o registrarse con otro correo.
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <!-- <button type="button" class="btn btn-success" id="buttonSignUp">Registrar</button> -->
             </div>
         </div>
     </div>

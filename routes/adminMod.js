@@ -7,16 +7,13 @@ var idUser = 0;
 
 Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 	if(err){
-		throw new Error('no está corriendo el servidor mongo (mongod) o'
-			+ ' no estás llegando a ese puerto o host');
+		throw new Error('Error: No hay conexión con la base de datos');
 	}
 	/* GET adminMod. */
 	router.get('/:id', function (req, res, next) {
 	// traigo de la db la consulta buscando por id y la inyecto en el hbs
 		idUser = req.params.id;
-		console.log(idUser);
 		db.collection('users').find({id: Number(req.params.id)}).toArray(function(err,arr){
-			console.log(arr);
 			res.render('adminMod', { css: '/stylesheets/dashboard.css',
 									data: arr
 			});
@@ -25,7 +22,6 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 
 	//POST method route
 	router.post('/', function (req, res) {
-		//console.log(req.body);
 		var idInput = req.body.inputId;
 		var nameInput = req.body.inputNombre;
 		var lastNameInput = req.body.inputApellido;
@@ -34,8 +30,6 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db){
 		var photoInput = req.body.inputFoto;
 		var phoneInput = req.body.inputTelefono;
 		var birthdayInput = req.body.inputFechaNac;
-
-		//console.log(idInput, nameInput, lastNameInput, emailInput, passwordInput, photoInput, phoneInput, birthdayInput);
 
 		// calcular edad
 		var bday = new Date(birthdayInput);

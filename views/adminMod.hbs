@@ -10,12 +10,10 @@
           <a class="navbar-brand" href="#">ABM Usuarios - Administrador</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Cerrar sesión</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
+          <a href="/" type="button" class="btn btn-default navbar-btn navbar-right" id="buttonSignOut">Cerrar Sesión</a>
+          <form method="GET" action="/admin" class="navbar-form navbar-right">
             <div class="input-group">
-            <input type="text" class="form-control" placeholder="Buscar usuario">
+            <input name="s" type="text" class="form-control" placeholder="Buscar usuario" data-toggle="tooltip" data-placement="bottom" title="Correo Electrónico">
             <span class="input-group-btn">
               <button class="btn btn-default maincolor1 maincolor1hover" type="submit">
                 <i class="glyphicon glyphicon-search"></i>
@@ -32,7 +30,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="/admin">Ver listado</a></li>
-            <li><a href="/adminAdd">Añadir usuario <span class="sr-only">(current)</span></a></li>
+            <li><a href="/adminAdd">Agregar usuario</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -43,45 +41,45 @@
             <div class="form-group">
               <label for="inputNombre" class="col-sm-2 control-label">Nombre</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="inputNombre" id="inputNombre" placeholder="Nombre del usuario" value="{{name}}">
+                <input type="text" class="form-control" name="inputNombre" id="inputNombre" placeholder="Nombre del usuario" value={{name}}>
               </div>
             </div>
             <div class="form-group">
               <label for="inputApellido" class="col-sm-2 control-label">Apellido</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="inputApellido" id="inputApellido" placeholder="Apellido del usuario" value="{{lastName}}">
+                <input type="text" class="form-control" name="inputApellido" id="inputApellido" placeholder="Apellido del usuario" value={{lastName}}>
               </div>
             </div>
             <div class="form-group">
               <label for="inputEmail" class="col-sm-2 control-label">Email</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" name="inputEmail" id="inputEmail"  placeholder="Email del usuario" value="{{email}}">
+                <input type="email" class="form-control" name="inputEmail" id="inputEmail"  placeholder="Email del usuario" value={{email}}>
               </div>
             </div>
             <div class="form-group">
               <label for="inputContrasena" class="col-sm-2 control-label">Contraseña</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" name="inputContrasena" id="inputContrasena" placeholder="Contraseña del usuario" value="{{password}}">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputFoto" class="col-sm-2 control-label">Foto</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="inputFoto" id="inputFoto" placeholder="Foto del usuario" value="{{photo}}">
+                <input type="password" class="form-control" name="inputContrasena" id="inputContrasena" placeholder="Contraseña del usuario" value={{password}}>
               </div>
             </div>
             <div class="form-group">
               <label for="inputTelefono" class="col-sm-2 control-label">Teléfono</label>
               <div class="col-sm-10">
-                <input type="number" class="form-control" name="inputTelefono" id="inputTelefono" placeholder="Teléfono del usuario" value="{{phone}}">
+                <input type="number" class="form-control" name="inputTelefono" id="inputTelefono" placeholder="Teléfono del usuario" value={{phone}}>
               </div>
             </div>
             <div class="form-group">
               <label for="inputFechaNac" class="col-sm-2 control-label">Fecha de nacimiento</label>
               <div class="col-sm-10">
-                <input type="date" class="form-control" name="inputFechaNac" id="inputFechaNac" placeholder="Fecha de nacimiento del usuario" value="{{birthday}}">
+                <input type="date" class="form-control" name="inputFechaNac" id="inputFechaNac" placeholder="Fecha de nacimiento del usuario" value={{birthday}}>
               </div>
             </div>
+            <div class="form-group">
+              <label for="inputFoto" class="col-sm-2 control-label">Foto</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="inputFoto" id="inputFoto" placeholder="Foto del usuario" value={{photo}} data-toggle="tooltip" data-placement="bottom" title="URL de la foto">
+              </div>
+            </div>            
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-warning">Modificar</button>

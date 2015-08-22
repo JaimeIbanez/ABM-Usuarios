@@ -9,11 +9,13 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login'); // Log in / ABM Usuarios
 var signup = require('./routes/signup'); // Sign up / ABM Usuarios
+var usersMod = require('./routes/usersMod'); // Users - Modification / ABM Usuarios
+var usersRem = require('./routes/usersRem'); // Users - Remove / ABM Usuarios
 var admin = require('./routes/admin'); // Admin - Dashboard  / ABM Usuarios
 var adminAddForm = require('./routes/adminAddForm');
 var adminAdd = require('./routes/adminAdd');
 var adminMod = require('./routes/adminMod');
-var adminRemove = require('./routes/adminRemove');
+var adminRem = require('./routes/adminRem');
 
 var app = express();
 
@@ -33,11 +35,13 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/login', login); // Log in / ABM Usuarios
 app.use('/signup', signup); // Sign up / ABM Usuarios
+app.use('/usersMod', usersMod); // Users - Modification / ABM Usuarios
+app.use('/usersRem', usersRem); // Users - Remove / ABM Usuarios
 app.use('/admin', admin); // Admin - Dashboard  / ABM Usuarios
 app.use('/adminAdd', adminAdd);
 app.use('/adminAddForm', adminAddForm);
 app.use('/adminMod', adminMod);
-app.use('/adminRem', adminRemove);
+app.use('/adminRem', adminRem);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

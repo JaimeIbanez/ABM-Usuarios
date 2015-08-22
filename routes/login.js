@@ -16,7 +16,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function (err, db) {
 		db.collection('users').find({email: emailInput}).toArray(function (err, arr) {
 			if (err || arr === undefined || arr.length === 0) {
 				res.render('error', {
-					message: 'No existe un usuario registrado con el email ' + emailInput + ' . Por favor registrarse o intentar ingresar con otro email',
+					message: 'No existe un usuario registrado con el correo ' + emailInput + ' . Por favor registrarse o intentar ingresar con otro correo',
 		 			error: {status: 404, stack: new Error().stack}
 		 		});
 			} 
@@ -39,50 +39,6 @@ Mongo.connect('mongodb://localhost:27017/abm', function (err, db) {
 		});
 
 	});
-
-
-
-
-
-	// router.get('/', function(req, res, next) {
-	// 	var email = req.body.loginEmail;
-	// 	var password = req.body.loginPassword;
-
-
-
-
-	// 	db.collection('users').find({name: req.params.username}).toArray(function(err, arr) {
-	// 		// si err existe render error, si arr es undefined render error, si arr tiene longitud 0 render error
-	// 		if (err || arr === undefined || arr.length === 0) {
-	// 			res.render('error', {
-	// 				message: 'El usuario ' + req.params.username + ' no existe',
-	// 	 			error: {status: 404, stack: new Error().stack}
-	// 	 		});
-	// 		} else {
-	// 			res.render('users', {
-	// 				name: arr[0].name,
-	// 				email: arr[0].email
-	// 			});
-	// 		}
-	// 	});
-
-
-
-
-	// 	if (users[req.params.userId] === undefined) {
-	// 		res.render('error', {
-	// 			message: 'El usuario ' + req.params.userId + ' no existe',
-	// 			error: {status: 404, stack: new Error().stack}
-	// 		});
-	// 	} else {
-	// 		res.render('users', {
-	// 			id: req.params.userId,
-	// 			name: users[req.params.userId].name,
-	// 			email: users[req.params.userId]['email']
-	// 		});
-	// 	}
-	// });
-
 
 });
 

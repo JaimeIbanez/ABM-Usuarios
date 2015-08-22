@@ -17,8 +17,6 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
 		var phoneInput = req.body.inputTelefono;
 		var birthdayInput = req.body.inputBirthday;
 
-		console.log(nameInput, lastNameInput, emailInput, passwordInput, photoInput, phoneInput, birthdayInput);
-
 		// calcular edad
 		var bday = new Date(birthdayInput);
 		var cur = new Date();
@@ -48,7 +46,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function(err, db) {
 			else {
 				// falta manejar mejor el error para que este dentro de la misma página
 				res.render('error', {
-					message: 'Ya existe un usuario registrado con ese email ' + emailInput + ' . Por favor registrarse con otro email.',
+					message: 'Ya existe un usuario registrado con el correo ' + emailInput + ' . Por favor intentar agregar un nuevo usuario con otro correo.',
 		 			error: {status: 404, stack: new Error().stack}
 		 		});
 			}

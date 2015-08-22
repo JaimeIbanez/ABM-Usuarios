@@ -45,7 +45,7 @@ Mongo.connect('mongodb://localhost:27017/abm', function (err, db) {
 				});
 			} else {
 				res.render('error', {
-					message: 'Ya existe un usuario registrado con el correo ' + emailInput + ' . Por favor ingresar con este correo o ingresar con otro correo.',
+					message: 'Ya existe un usuario registrado con el correo ' + emailInput + ' . Por favor ingresar con este correo o intentar registrarse con otro correo.',
 		 			error: {status: 404, stack: new Error().stack}
 		 		});
 			}

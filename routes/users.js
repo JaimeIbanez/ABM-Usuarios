@@ -12,12 +12,12 @@ Mongo.connect('mongodb://localhost:27017/abm', function (err, db) {
 	router.get('/:userId', function (req, res, next) {
 		
 		var userId = Number(req.params.userId);
-		console.log(userId);
 
 		db.collection('users').find({id: userId}).toArray(function (err, arr) {
 			
 			var array = arr[0];
 			res.render('users', { css: '/stylesheets/abm.css',
+				id: userId,
 				photo: array.photo,
 				name: array.name,
 				lastName: array.lastName,
